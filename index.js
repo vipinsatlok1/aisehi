@@ -2,7 +2,7 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const port = process.env.PORT || 9999
-const fs = require("fs")
+const fs = require('@cyclic.sh/s3fs') 
 
 
 let writer = fs.createWriteStream('hello.txt', {

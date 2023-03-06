@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/vipinsatlok1/aisehi#readme",
   "dependencies": {
+    "@cyclic.sh/s3fs": "^1.2.8",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   }
