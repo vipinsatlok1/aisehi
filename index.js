@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 
     filevale.writeFile("satsahebji.txt", "hello ji mera naam vipin hai", "utf-8", (err, data) => {
         filevale.readFile("satsahebji.txt", "utf-8", (err, data) => {
-            res.send(data)
+            res.send("data")
         })
     })
     
