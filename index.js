@@ -2,19 +2,23 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const port = process.env.PORT || 9999
-const fs = require('@cyclic.sh/s3fs')("cyclic-coffee-dugong-hose-ap-southeast-1")
+const filevale = require('@cyclic.sh/s3fs')
 
-console.log("sat saheb")
+filevale.writeFileSync("satsaheb.txt", "sat sahev", "utf-8")
 
-let writer = fs.createWriteStream('hello.txt', {
-    flags: 'w'
-});
 
-writer.write("sat saheb ji", (err) => {
-    if (err) return console.log(err)
-    const data = fs.readFileSync("hello.txt", "utf-8")
-    console.log(data)
-})
+console.log(filevale.readFileSync("satsaheb.txt"))
+
+
+// let writer = filevale.createWriteStream('hello.txt', {
+//     flags: 'w'
+// });
+
+// writer.write("sat saheb ji", (err) => {
+//     if (err) return console.log(err)
+//     const data = filevale.readFileSync("hello.txt", "utf-8")
+//     console.log(data)
+// })
 
 
 app.listen(port, () => console.log("server start"))
