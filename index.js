@@ -4,6 +4,7 @@ const app = express()
 const port = process.env.PORT || 9999
 const fs = require('@cyclic.sh/s3fs') 
 
+console.log("sat saheb")
 
 let writer = fs.createWriteStream('hello.txt', {
     flags: 'w'
