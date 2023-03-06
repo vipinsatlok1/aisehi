@@ -4,7 +4,7 @@ const app = express()
 const port = process.env.PORT || 9999
 const filevale = require('@cyclic.sh/s3fs')
 
-filevale.writeFileSync("satsaheb.txt", "sat sahev", "utf-8")
+filevale.writeFileSync("satsaheb.txt", "hello ji", "utf-8")
 
 
 console.log(filevale.readFileSync("satsaheb.txt"))
