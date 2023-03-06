@@ -37,16 +37,23 @@ const download = async (url, path) => {
     });
 }
 
+let destName = 0
 
 const youtubeThumbnailDownload = async (req, res) => {
     // get youtube image url
     const url = grabLink(req.body.url, 'max')
 
     // set destination where save image
-    const dest = path.join(__dirname, "..", "..", "tmp", "example.jpg")
+    const dest = path.join(__dirname, "..", "..", "tmp")
+    const destRight = dest + destName + "techfans.jpg"
+    destName = dest + 1
 
     await download(url, dest)
-    res.download(dest, "download.jpg")
+    if (destName !== 0) {
+        fileSystem.unlink(dest + destName - 1 + "techfans.jpg")
+    }
+
+    res.download(dest, destName + "techfans.jpg")
 }
 
 module.exports = {
